@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1039062197499",
+    "project_id": "voice-announcer-2962e",
+    "storage_bucket": "voice-announcer-2962e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039062197499:android:bfa6b921cd56a709e93c5e",
+        "android_client_info": {
+          "package_name": "uz.gita.eventapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039062197499-m0v7r53s54the183ta2lta1ang93rnhg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW7UIRG7hiY_PiBS_pPUU09J-5YiB7gCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039062197499-m0v7r53s54the183ta2lta1ang93rnhg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

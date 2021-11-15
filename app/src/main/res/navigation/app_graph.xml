@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/introScreen">
+
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="uz.gita.eventapp.presentation.ui.MainScreen"
+        android:label="MainScreen"
+        tools:layout="@layout/screen_main">
+        <action
+            android:id="@+id/action_mainScreen_to_callScreen"
+            app:destination="@id/callScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_batteryScreen"
+            app:destination="@id/batteryScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_SMSScreen"
+            app:destination="@id/SMSScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_screenScreen"
+            app:destination="@id/screenScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_airScreen"
+            app:destination="@id/airScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_settingsScreen"
+            app:destination="@id/settingsScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/callScreen"
+        android:name="uz.gita.eventapp.presentation.ui.CallScreen"
+        android:label="CallScreen"
+        tools:layout="@layout/screen_call"/>
+    <fragment
+        android:id="@+id/batteryScreen"
+        android:name="uz.gita.eventapp.presentation.ui.BatteryScreen"
+        android:label="BatteryScreen"
+        tools:layout="@layout/screen_battery"/>
+    <fragment
+        android:id="@+id/SMSScreen"
+        android:name="uz.gita.eventapp.presentation.ui.SMSScreen"
+        android:label="SMSScreen"
+        tools:layout="@layout/screen_sms"/>
+    <fragment
+        android:id="@+id/screenScreen"
+        android:name="uz.gita.eventapp.presentation.ui.ScreenScreen"
+        android:label="screen_screen"
+        tools:layout="@layout/screen_screen" />
+    <fragment
+        android:id="@+id/airScreen"
+        android:name="uz.gita.eventapp.presentation.ui.AirScreen"
+        android:label="screen_air"
+        tools:layout="@layout/screen_air" />
+    <fragment
+        android:id="@+id/settingsScreen"
+        android:name="uz.gita.eventapp.presentation.ui.SettingsScreen"
+        android:label="screen_settings"
+        tools:layout="@layout/screen_settings" />
+    <fragment
+        android:id="@+id/introScreen"
+        android:name="uz.gita.eventapp.presentation.ui.IntroScreen"
+        android:label="IntroScreen"
+        tools:layout="@layout/screen_intro">
+        <action
+            android:id="@+id/action_introScreen_to_mainScreen"
+            app:destination="@id/mainScreen"
+            app:popUpTo="@id/introScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

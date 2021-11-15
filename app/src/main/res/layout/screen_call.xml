@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#050D1E"
+    tools:context=".presentation.ui.CallScreen">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#050C19">
+
+            <com.skydoves.elasticviews.ElasticImageView
+                android:id="@+id/back_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintLeft_toLeftOf="parent"
+               app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/main_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="Call Announce"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <TextView
+        android:id="@+id/call_main_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call announcer"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout"
+        app:layout_constraintVertical_bias="0.05" />
+
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/call_main_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:theme="@style/MySwitch"
+        app:layout_constraintBottom_toBottomOf="@id/call_main_txt"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintLeft_toRightOf="@id/call_main_txt"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/call_main_txt" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/line"
+        app:layout_constraintLeft_toLeftOf="@id/call_main_txt"
+        app:layout_constraintRight_toRightOf="@id/call_main_switch"
+        app:layout_constraintTop_toBottomOf="@id/call_main_txt" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/incoming_call_anim"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/call_main_txt"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        app:layout_constraintVertical_bias="0.05"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/name" />
+
+    <TextView
+        android:id="@+id/incoming_call_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Announce incoming calls"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintLeft_toRightOf="@id/incoming_call_anim"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/incoming_call_anim" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/incoming_call_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:theme="@style/MySwitch"
+        app:layout_constraintBottom_toBottomOf="@id/incoming_call_anim"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintLeft_toLeftOf="@id/call_main_switch"
+        app:layout_constraintRight_toRightOf="@id/call_main_switch"
+        app:layout_constraintTop_toTopOf="@id/incoming_call_anim" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/outgoing_call_anim"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/call_main_txt"
+        app:layout_constraintTop_toBottomOf="@id/incoming_call_anim"
+        app:layout_constraintVertical_bias="0.1"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/number" />
+
+    <TextView
+        android:id="@+id/outgoing_call_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Announce outgoing calls"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintLeft_toRightOf="@id/outgoing_call_anim"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/outgoing_call_anim" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/outgoing_call_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:theme="@style/MySwitch"
+        app:layout_constraintBottom_toBottomOf="@id/outgoing_call_anim"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintLeft_toLeftOf="@id/call_main_switch"
+        app:layout_constraintRight_toRightOf="@id/call_main_switch"
+        app:layout_constraintTop_toTopOf="@id/outgoing_call_anim" />
+
+
+    <View
+        android:id="@+id/view_incoming"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/incoming_call_txt"
+        app:layout_constraintLeft_toLeftOf="@id/incoming_call_anim"
+        app:layout_constraintRight_toRightOf="@id/incoming_call_switch"
+        app:layout_constraintTop_toTopOf="@id/incoming_call_anim" />
+
+    <View
+        android:id="@+id/view_outgoing"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/outgoing_call_txt"
+        app:layout_constraintLeft_toLeftOf="@id/outgoing_call_anim"
+        app:layout_constraintRight_toRightOf="@id/outgoing_call_switch"
+        app:layout_constraintTop_toTopOf="@id/outgoing_call_anim" />
+
+
+
+    <View
+        android:id="@+id/view_call_main"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/call_main_txt"
+        app:layout_constraintLeft_toLeftOf="@id/call_main_txt"
+        app:layout_constraintRight_toRightOf="@id/call_main_switch"
+        app:layout_constraintTop_toTopOf="@id/call_main_txt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

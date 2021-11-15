@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#050D1E"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.BatteryScreen">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="?android:actionBarSize">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="#050C19"
+            android:layout_height="match_parent">
+            <com.skydoves.elasticviews.ElasticImageView
+                android:id="@+id/back_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+                android:src="@drawable/ic_back_arrow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <TextView
+                android:id="@+id/main_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="Battery announcer"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <TextView
+        android:id="@+id/battery_main_txt"
+        android:text="Battery announcer"
+        app:layout_constraintTop_toBottomOf="@id/layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+   <androidx.appcompat.widget.SwitchCompat
+       android:id="@+id/battery_main_switch"
+       android:theme="@style/MySwitch"
+       android:checked="true"
+       app:layout_constraintLeft_toRightOf="@id/battery_main_txt"
+       app:layout_constraintHorizontal_bias="0.95"
+       app:layout_constraintTop_toTopOf="@id/battery_main_txt"
+       app:layout_constraintBottom_toBottomOf="@id/battery_main_txt"
+       app:layout_constraintRight_toRightOf="parent"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/line"
+        android:background="@drawable/line"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="@id/battery_main_txt"
+        app:layout_constraintRight_toRightOf="@id/battery_main_switch"
+        app:layout_constraintTop_toBottomOf="@id/battery_main_txt"
+        android:layout_width="0dp"
+        android:layout_height="4dp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/charger_connect_anim"
+        app:layout_constraintLeft_toLeftOf="@id/battery_main_txt"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        app:lottie_rawRes="@raw/person"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+    <TextView
+        android:id="@+id/charger_connect_txt"
+        app:layout_constraintLeft_toRightOf="@id/charger_connect_anim"
+        app:layout_constraintTop_toTopOf="@id/charger_connect_anim"
+        android:text="Announce when charge is \nconnected"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintHorizontal_bias="0.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/charger_connect_switch"
+        android:theme="@style/MySwitch"
+        android:checked="true"
+        app:layout_constraintLeft_toLeftOf="@id/battery_main_switch"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintTop_toTopOf="@id/charger_connect_anim"
+        app:layout_constraintBottom_toBottomOf="@id/charger_connect_anim"
+        app:layout_constraintRight_toRightOf="@id/battery_main_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/charger_dis_connect_anim"
+        app:layout_constraintLeft_toLeftOf="@id/battery_main_txt"
+        app:layout_constraintTop_toBottomOf="@id/charger_connect_anim"
+        app:lottie_rawRes="@raw/battery_disconnect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        app:lottie_loop="true"
+        android:scaleType="centerCrop"
+        app:lottie_autoPlay="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+    <TextView
+        android:id="@+id/charger_dis_connect_txt"
+        app:layout_constraintLeft_toRightOf="@id/charger_dis_connect_anim"
+        app:layout_constraintTop_toTopOf="@id/charger_dis_connect_anim"
+        android:text="Announce when charge is \ndisconnected"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintHorizontal_bias="0.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/charger_dis_connect_switch"
+        android:theme="@style/MySwitch"
+        android:checked="true"
+        app:layout_constraintLeft_toLeftOf="@id/battery_main_switch"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintTop_toTopOf="@id/charger_dis_connect_anim"
+        app:layout_constraintBottom_toBottomOf="@id/charger_dis_connect_anim"
+        app:layout_constraintRight_toRightOf="@id/battery_main_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/low_battery_anim"
+        app:layout_constraintLeft_toLeftOf="@id/battery_main_txt"
+        app:layout_constraintTop_toBottomOf="@id/charger_dis_connect_anim"
+        app:lottie_rawRes="@raw/low_battery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        app:lottie_loop="true"
+        android:scaleType="centerCrop"
+        app:lottie_autoPlay="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+    <TextView
+        android:id="@+id/low_battery_txt"
+        app:layout_constraintLeft_toRightOf="@id/low_battery_anim"
+        app:layout_constraintTop_toTopOf="@id/low_battery_anim"
+        android:text="Announce when battery is low"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintHorizontal_bias="0.1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/low_battery_switch"
+        android:theme="@style/MySwitch"
+        android:checked="true"
+        app:layout_constraintLeft_toLeftOf="@id/battery_main_switch"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintTop_toTopOf="@id/low_battery_anim"
+        app:layout_constraintBottom_toBottomOf="@id/low_battery_anim"
+        app:layout_constraintRight_toRightOf="@id/battery_main_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/view_connect"
+        app:layout_constraintTop_toTopOf="@id/charger_connect_anim"
+        app:layout_constraintBottom_toBottomOf="@id/charger_connect_txt"
+        app:layout_constraintLeft_toLeftOf="@id/charger_connect_anim"
+        app:layout_constraintRight_toRightOf="@id/charger_connect_switch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <View
+        android:id="@+id/view_disconnect"
+        app:layout_constraintTop_toTopOf="@id/charger_dis_connect_anim"
+        app:layout_constraintBottom_toBottomOf="@id/charger_dis_connect_txt"
+        app:layout_constraintLeft_toLeftOf="@id/charger_dis_connect_anim"
+        app:layout_constraintRight_toRightOf="@id/charger_dis_connect_switch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <View
+        android:id="@+id/view_low_battery"
+        app:layout_constraintTop_toTopOf="@id/low_battery_anim"
+        app:layout_constraintBottom_toBottomOf="@id/low_battery_txt"
+        app:layout_constraintLeft_toLeftOf="@id/low_battery_anim"
+        app:layout_constraintRight_toRightOf="@id/low_battery_switch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+    <View
+        android:id="@+id/view_battery_main"
+        app:layout_constraintTop_toTopOf="@id/battery_main_txt"
+        app:layout_constraintBottom_toBottomOf="@id/battery_main_txt"
+        app:layout_constraintLeft_toLeftOf="@id/battery_main_txt"
+        app:layout_constraintRight_toRightOf="@id/battery_main_switch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
